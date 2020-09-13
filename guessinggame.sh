@@ -10,10 +10,14 @@ function guessAgain {
 }
 while [[ $num -ne $countF ]]
 do
-	if [[ $num -gt $countF ]]
+	if [[ $num != [0-9] ]]
+	then
+                echo "did you enter a valid number?"
+	elif [[ $num -gt $countF ]]
 	then
 		echo "you guessed too high of a number"
-	else
+	elif [[ $num -lt $countF ]]
+	then
                 echo "you guessed too low of a number"
 	fi
 	guessAgain
